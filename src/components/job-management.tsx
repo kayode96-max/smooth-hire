@@ -101,7 +101,7 @@ export function JobManagementComponent() {
             </Dialog>
           </CardHeader>
           <CardContent>
-            <Table>
+            <Table className='justify-between'>
               <TableHeader>
                 <TableRow>
                   <TableHead>Title</TableHead>
@@ -169,7 +169,7 @@ export function JobManagementComponent() {
                               <Users className="h-4 w-4" />
                             </Button>
                           </DialogTrigger>
-                          <DialogContent className="sm:max-w-[768px] bg-white">
+                          <DialogContent className="sm:max-w-[768px] justify-between bg-white">
                             <DialogHeader>
                               <DialogTitle>Applicants for {job.title}</DialogTitle>
                             </DialogHeader>
@@ -274,7 +274,7 @@ function ApplicantList({ jobId }: { jobId: number }) {
 
   return (
     <>
-      <Table>
+      <Table className='bg-white'>
         <TableHeader>
           <TableRow>
             <TableHead>Name</TableHead>
@@ -290,10 +290,10 @@ function ApplicantList({ jobId }: { jobId: number }) {
               <TableCell>{applicant.email}</TableCell>
               <TableCell>
                 <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                  applicant.status === 'applied' ? 'bg-blue-100 text-blue-800' :
-                  applicant.status === 'reviewing' ? 'bg-yellow-100 text-yellow-800' :
-                  applicant.status === 'interviewed' ? 'bg-purple-100 text-purple-800' :
-                  applicant.status === 'offered' ? 'bg-green-100 text-green-800' :
+                  applicant.status === 'applied' ? 'bg-blue-200 text-blue-800' :
+                  applicant.status === 'reviewing' ? 'bg-yellow-200 text-yellow-800' :
+                  applicant.status === 'interviewed' ? 'bg-purple-200 text-purple-800' :
+                  applicant.status === 'offered' ? 'bg-green-200 text-green-800' :
                   'bg-red-100 text-red-800'
                 }`}>
                   {applicant.status}
@@ -308,7 +308,7 @@ function ApplicantList({ jobId }: { jobId: number }) {
                     <SelectTrigger className="w-[120px]">
                       <SelectValue placeholder="Select status" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className='bg-white'>
                       <SelectItem value="applied">Applied</SelectItem>
                       <SelectItem value="reviewing">Reviewing</SelectItem>
                       <SelectItem value="interviewed">Interviewed</SelectItem>
